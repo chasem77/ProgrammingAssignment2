@@ -1,17 +1,13 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## This function creates multiple function calls assigned to a variable that canset and get a matrix as well a setting and getting the inverse of the matrix
 
 makeCacheMatrix <- function(x = matrix()) {
 invx <- NULL
-  if(!(ncol(x) == nrow(x))) {
-    print('Matrix must be square')
-    break
-  }
   set <- function(y) {
     x <<- y
-    invx <<- solve(y)
+    invx <<- NULL
   }
   get <- function() x
   setinv <- function(solve) invx <<- solve
@@ -20,7 +16,7 @@ invx <- NULL
 }
 
 
-## Write a short comment describing this function
+## This function will check to see if the invx of a matrix has been previously defined. If the value has been previously defined it will be returned, otherwise the inverse will be calculated
 
 cacheSolve <- function(x, ...) {
 invx <- x$getinv()
